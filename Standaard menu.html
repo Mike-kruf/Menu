@@ -182,7 +182,7 @@ ul.menu li:hover > ul {
 </head>
 
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <a href="" class="logo"><strong class="strong-car">Autobedrijf</strong> Swagemakers</a>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
@@ -210,20 +210,28 @@ ul.menu li:hover > ul {
         </ul>
       </header>
       <script>
-        $(window).scroll(function(){
-          var nav = ('custom-bootstrap-menu');
-          var body = ('body'); 
-          var top = 100;
-          if ($(window).scrollTop() >= top) {
-            nav.addclass('navbar-fixed-top');
-            body.addclass('padding-fify');
+        window.onscroll = function() {scrollFunction()};
       
-          } else {
-            nav.removeclass('navbar-fixed');
-            body.removeclass('padding-fify')
-          }
-        });
-      </script>
+      function scrollFunction() {
+        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+          document.getElementById("header").style.top = "0";
+        } else {
+          document.getElementById("header").style.top = "-100px";
+        }
+      }
+        </script>
+    <script type="text/javascript"> // OPTION MENU HIDE ON SCROLL 
+  window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+    document.getElementById("header").style.top = "0";
+  } else {
+    document.getElementById("header").style.top = "-100px";
+  }
+}
+  </script>
+  
 </body>
 </html>
 
